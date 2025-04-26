@@ -1,12 +1,12 @@
 //const serviceAccount = require('./service-account-file.json');
-var admin = require("firebase-admin");
-const express = require('express'); // Add this line
+import { initializeApp, firestore } from "firebase-admin";
+import express, { json } from 'express'; // Add this line
 const app = express(); // Initialize the app
 
-app.use(express.json()); // Middleware to parse JSON requests
+app.use(json()); // Middleware to parse JSON requests
 
 
-admin.initializeApp();
+initializeApp();
 
 // // Initialize Firebase Admin SDK
 // if (process.env.GOOGLE_CLOUD_PROJECT) {
@@ -21,7 +21,7 @@ admin.initializeApp();
 //   }
 
 
-const db = admin.firestore(); // Initialize Firestore
+const db = firestore(); // Initialize Firestore
 
 // Endpoint to create a financial asset record
 app.post('/api/assets', async (req, res) => {
