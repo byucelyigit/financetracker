@@ -5,9 +5,17 @@ const app = express(); // Initialize the app
 
 app.use(express.json()); // Middleware to parse JSON requests
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-});
+// Initialize Firebase Admin SDK
+if (process.env.GOOGLE_CLOUD_PROJECT) {
+    // Running in Google Cloud environment
+    admin.initializeApp();
+  } else {
+    // Local development
+    const serviceAccount = require('./service-account-file.json');
+    admin.initializeApp({
+      credential: admin.credential.cert(serviceAccount),
+    });
+  }
 
 
 const db = admin.firestore(); // Initialize Firestore
