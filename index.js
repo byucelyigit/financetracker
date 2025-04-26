@@ -9,7 +9,6 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
 
-console.log(serviceAccount); // Log the service account details for debugging
 
 const db = admin.firestore(); // Initialize Firestore
 
