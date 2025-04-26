@@ -1,4 +1,4 @@
-const serviceAccount = require('./service-account-file.json');
+//const serviceAccount = require('./service-account-file.json');
 var admin = require("firebase-admin");
 const express = require('express'); // Add this line
 const app = express(); // Initialize the app
