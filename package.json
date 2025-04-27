@@ -1,0 +1,19 @@
+{
+  "name": "finance-tracker",
+  "version": "1.0.0",
+  "description": "A finance tracker application deployed to Firebase.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "deploy": "firebase deploy"
+  },
+  "dependencies": {
+    "firebase-admin": "^11.0.0",
+    "firebase-functions": "^4.0.0"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "author": "",
+  "license": "ISC"
+}
